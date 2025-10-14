@@ -1,0 +1,138 @@
+/* registro inicio */
+/* === Fondo principal === */
+.auth {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: calc(100vh - 1200px); /* evita que tape el footer */
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  padding: 40px 20px;
+}
+
+/* === Tarjeta de registro === */
+.registro-card {
+  background-color: #ffffff;
+  border-radius: 16px;
+  padding: 40px 50px;
+  width: 100%;
+  max-width: 420px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  border: 1px solid #dee2e6;
+  animation: fadeIn 0.5s ease;
+}
+
+/* Animación suave */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* === Títulos === */
+.registro-card h2 {
+  color: #0d6efd;
+  font-weight: 700;
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+}
+
+.registro-card .sub {
+  color: #6c757d;
+  margin-bottom: 25px;
+  font-size: 0.95rem;
+}
+
+/* === Formulario === */
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 10px;
+}
+
+.campo {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+}
+
+.campo label {
+  font-weight: 500;
+  margin-bottom: 6px;
+  color: #212529;
+  font-size: 0.95rem;
+}
+
+.campo input {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #ced4da;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.campo input:focus {
+  outline: none;
+  border-color: #0d6efd;
+  box-shadow: 0 0 6px rgba(13, 110, 253, 0.3);
+}
+
+/* === Botón principal === */
+.btn-primario {
+  background: linear-gradient(90deg, #0d6efd, #007bff);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.btn-primario:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(13, 110, 253, 0.3);
+}
+
+/* === Enlace inferior === */
+.sub.mt-3 {
+  margin-top: 25px;
+  color: #6c757d;
+}
+
+.link-login {
+  color: #0d6efd;
+  font-weight: 500;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.link-login:hover {
+  text-decoration: underline;
+  color: #084298;
+}
+
+/* === Responsivo === */
+@media (max-width: 576px) {
+  .registro-card {
+    padding: 30px 25px;
+  }
+
+  .registro-card h2 {
+    font-size: 1.6rem;
+  }
+}
+
+
+/* registro final */

@@ -1,0 +1,25 @@
+/* Estilo de los campos de entrada */
+.campo input,
+.campo textarea {
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #ced4da;
+  font-size: 1rem;
+  color: #212529;
+  transition: border-color 0.3s, box-shadow 0.3s;
+  width: 100%; /* Esto asegura que ocupe todo el ancho disponible */
+}
+
+/* Aumentar el ancho del textarea */
+.campo textarea {
+  height: 180px; /* Aumentar la altura para hacerlo más visible */
+  resize: vertical; /* Permitir que el usuario cambie el tamaño verticalmente */
+}
+
+/* Estilo para el focus de los campos */
+.campo input:focus,
+.campo textarea:focus {
+  border-color: #0d6efd;
+  outline: none;
+  box-shadow: 0 0 8px rgba(13, 110, 253, 0.3);
+}

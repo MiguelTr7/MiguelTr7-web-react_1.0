@@ -1,0 +1,96 @@
+/* Estilo general del footer */
+footer {
+  background-color: #212529; /* Fondo oscuro */
+  color: #ddd; /* Texto claro */
+  padding: 5px 0; /* Reducir el padding vertical */
+  font-size: 0.85rem; /* Reducir el tamaño de la fuente */
+  text-align: center;
+}
+
+footer .inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 16px;
+  display: grid;
+  gap: 15px; /* Reducir el espacio entre los elementos */
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+}
+
+/* Ajustar el tamaño de la marca */
+.footer-brand {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #f8f9fa;
+  margin-bottom: 10px;
+}
+
+/* Enlaces del footer */
+.footer-links {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+.footer-links a {
+  color: #ddd;
+  text-decoration: none;
+  font-weight: 500;
+  padding: 6px 8px;
+  border-radius: 6px;
+  transition: background-color 0.3s;
+  font-size: 0.9rem; /* Reducir el tamaño de los enlaces */
+}
+
+.footer-links a:hover {
+  background-color: #0d6efd;
+  color: #fff;
+}
+
+/* Estilo del formulario de suscripción */
+.suscripcion {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  max-width: 350px;
+  margin: 0 auto;
+}
+
+.suscripcion input {
+  padding: 10px;
+  font-size: 0.95rem;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  width: 100%;
+}
+
+.suscripcion button {
+  padding: 10px 15px;
+  font-size: 0.95rem;
+  background-color: #0d6efd;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.suscripcion button:hover {
+  background-color: #0b5ed7;
+}
+
+/* Derechos reservados */
+.copy {
+  color: #999;
+  font-size: 0.8rem; /* Reducir el tamaño del texto de derechos reservados */
+  margin-top: 10px;
+}
+
+/* Responsivo: En pantallas pequeñas, el footer se reorganiza */
+@media (max-width: 768px) {
+  footer .inner {
+    grid-template-columns: 1fr; /* En móviles, todo se apila en una sola columna */
+  }
+}
