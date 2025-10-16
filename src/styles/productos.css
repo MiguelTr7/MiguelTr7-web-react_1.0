@@ -1,0 +1,94 @@
+/* productos inicio */
+.producto img {
+  width: 150%; /* Asegura que las imágenes ocupen todo el ancho disponible */
+  height: 250px; /* Altura fija para todas las imágenes */
+  object-fit: scale-down; /* Hace que la imagen se recorte si es necesario para ajustarse al contenedor */
+  border-radius: 5px; /* Bordes redondeados para las imágenes */
+}
+
+.seccion-titulo {
+  text-align: center;
+  margin-top: 40px;
+  margin-bottom: 30px;
+}
+
+.sub {
+  color: #6c757d;
+  font-size: 1rem;
+}
+
+.productos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 25px;
+  padding: 20px 40px;
+  justify-items: center;
+  
+}
+
+.card {
+  background-color: #fff;
+  border: 1px solid #dee2e6;
+  border-radius: 10px;
+  gap: 10px;
+  width: 100%;
+  max-width: 250px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  text-align: center;
+  padding:  15px ;
+  margin: 10px;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+.precio {
+  font-weight: bold;
+  color: #0d6efd;
+  margin: 5px 0 10px 0;
+}
+
+.card-acciones {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.btn {
+  border-radius: 5px;
+  padding: 8px 14px;
+  font-weight: 500;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.btn-primario {
+  background-color: #0d6efd;
+  color: white;
+}
+
+.btn-primario:hover {
+  background-color: #0b5ed7;
+}
+
+.btn-negro {
+  background-color: #212529;
+  color: white;
+}
+
+.btn-negro:hover {
+  background-color: #343a40;
+}
+
+/* productos final */

@@ -1,0 +1,163 @@
+/* ==========================================================
+   🛒 OFERTAS - Ajustado al estilo de Productos (4 columnas)
+   ========================================================== */
+
+.ofertas {
+  background: #f8f9fa;
+  min-height: 100vh;
+  padding-bottom: 60px;
+  font-family: "Segoe UI", sans-serif;
+}
+
+/* ===== TÍTULO ===== */
+.seccion-titulo {
+  text-align: center;
+  margin-top: 40px;
+  margin-bottom: 30px;
+}
+
+.seccion-titulo h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #0d6efd;
+}
+
+.sub {
+  color: #6c757d;
+  font-size: 1rem;
+}
+
+/* ===== GRID ===== */
+.ofertas-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 👈 4 columnas fijas en escritorio */
+  gap: 2px;
+  padding: 20px 750px;
+  justify-items: center;
+}
+
+/* ===== TARJETAS ===== */
+.oferta-card {
+  background-color: #fff;
+  border: 1px solid #dee2e6;
+  border-radius: 10px;
+  width: 100%;
+  max-width: 250px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  text-align: center;
+  padding: 15px;
+  margin: 10px;
+  position: relative;
+}
+
+.oferta-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Imagen */
+.oferta-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+/* ===== NOMBRE Y PRECIOS ===== */
+.oferta-card h3 {
+  font-size: 1.05rem;
+  color: #212529;
+  margin-bottom: 8px;
+}
+
+.precios {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.precio-oferta {
+  font-weight: bold;
+  color: #dc3545;
+  font-size: 1rem;
+}
+
+.precio-original {
+  color: #6c757d;
+  font-size: 0.9rem;
+  text-decoration: line-through;
+}
+
+/* ===== BOTÓN (idéntico al de productos) ===== */
+.btn {
+  border-radius: 5px;
+  padding: 8px 14px;
+  font-weight: 500;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.btn-primario {
+  background-color: #0d6efd;
+  color: white;
+  border: none;
+}
+
+.btn-primario:hover {
+  background-color: #0b5ed7;
+}
+
+/* ===== ETIQUETA DE DESCUENTO ===== */
+.oferta-card::before {
+  content: "20% OFF";
+  position: absolute;
+  top: 12px;
+  right: -40px;
+  background: #dc3545;
+  color: #fff;
+  font-weight: 600;
+  font-size: 0.8rem;
+  padding: 4px 40px;
+  transform: rotate(45deg);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* ===== RESPONSIVE ===== */
+
+/* 3 columnas en tablets */
+@media (max-width: 992px) {
+  .ofertas-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* 2 columnas en móviles grandes */
+@media (max-width: 768px) {
+  .ofertas-grid {
+    grid-template-columns: repeat(2, 1fr);
+    padding: 10px 20px;
+  }
+
+  .oferta-card img {
+    height: 170px;
+  }
+}
+
+/* 1 columna en móviles pequeños */
+@media (max-width: 576px) {
+  .ofertas-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .oferta-card img {
+    height: 160px;
+  }
+
+  .oferta-card::before {
+    font-size: 0.7rem;
+  }
+}

@@ -1,0 +1,82 @@
+/* carrito inicio */
+
+.tabla {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: 40px auto;
+  max-width: 900px;
+}
+
+.t-head {
+  font-weight: 600;
+  background-color: #0d6efd;
+  color: rgb(0, 0, 0);
+  padding: 12px;
+  border-radius: 8px;
+}
+
+.t-row {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr 1fr;
+  align-items: center;
+  background-color: #ffffff;
+  padding: 10px;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+}
+
+.t-row span {
+  text-align: center;
+}
+
+.cantidad-controles {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+}
+
+.btn-cant {
+  background-color: #0d6efd;
+  color: white;
+  border: none;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.btn-cant:hover {
+  background-color: #0b5ed7;
+}
+
+.carrito-total {
+  text-align: right;
+  max-width: 900px;
+  margin: 20px auto 60px;
+  padding: 20px;
+  background-color: #f8f9fa;
+  border-radius: 10px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+}
+
+.carrito-total h3 {
+  color: #212529;
+}
+
+.btn-primario {
+  background-color: #0d6efd;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 16px;
+  cursor: pointer;
+}
+
+.btn-primario:hover {
+  background-color: #0b5ed7;
+}
+
+/* carrito final */

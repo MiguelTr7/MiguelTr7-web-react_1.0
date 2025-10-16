@@ -1,0 +1,200 @@
+/* ==========================================================
+   🧰 BLOG 1 - Estilo moderno y elegante
+   ========================================================== */
+
+/* ===== Hero ===== */
+.blog1-hero {
+  position: relative;
+  width: 100%;
+  max-height: 420px;
+  overflow: hidden;
+  margin-bottom: 40px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+.blog1-hero img {
+  width: 100%;
+  height: 420px;
+  object-fit: cover;
+  filter: brightness(70%) saturate(110%);
+  transform: scale(1.05);
+  opacity: 0;
+  animation: fadeInHero 1.8s ease forwards;
+  transition: transform 10s ease, filter 1s ease;
+}
+
+.blog1-hero:hover img {
+  transform: scale(1.1);
+  filter: brightness(80%) saturate(120%);
+}
+
+@keyframes fadeInHero {
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.blog1-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background: rgba(0, 0, 0, 0.45);
+  backdrop-filter: blur(3px);
+  padding: 0 20px;
+}
+
+.blog1-overlay h1 {
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+  text-shadow: 0 3px 8px rgba(0, 0, 0, 0.5);
+}
+
+.blog1-overlay p {
+  font-size: 1.1rem;
+  max-width: 700px;
+  color: #f8f9fa;
+}
+
+/* ===== Contenido principal ===== */
+.blog1-contenido {
+  max-width: 900px;
+  margin: 0 auto 60px auto;
+  padding: 40px 30px;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+  line-height: 1.7;
+  transition: box-shadow 0.3s ease;
+}
+
+.blog1-contenido:hover {
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+}
+
+/* ===== Introducción ===== */
+.blog1-intro {
+  background: linear-gradient(135deg, #f1f8ff, #ffffff);
+  border-left: 5px solid #0d6efd;
+  padding: 20px 25px;
+  border-radius: 8px;
+  margin-bottom: 35px;
+  font-style: italic;
+  color: #444;
+  box-shadow: 0 3px 10px rgba(13, 110, 253, 0.1);
+}
+
+/* ===== Secciones ===== */
+.blog1-section {
+  margin-bottom: 30px;
+  padding: 10px 15px;
+  border-left: 4px solid transparent;
+  transition: all 0.3s ease;
+}
+
+.blog1-section:hover {
+  border-left: 4px solid #0d6efd;
+  background: #f8faff;
+  border-radius: 8px;
+  transform: translateY(-3px);
+  box-shadow: 0 3px 10px rgba(13, 110, 253, 0.08);
+}
+
+.blog1-section h2 {
+  color: #0d6efd;
+  margin-bottom: 10px;
+}
+
+.blog1-section p {
+  color: #333;
+  line-height: 1.6;
+}
+
+.blog1-section ul {
+  padding-left: 20px;
+  color: #444;
+  margin-top: 10px;
+}
+
+/* ===== Cita destacada ===== */
+.blog1-quote {
+  background: linear-gradient(135deg, #fdf4f4, #fff);
+  border-left: 6px solid #dc3545;
+  padding: 18px 25px;
+  margin: 40px 0;
+  color: #721c24;
+  font-style: italic;
+  font-weight: 500;
+  border-radius: 8px;
+  box-shadow: 0 3px 8px rgba(220, 53, 69, 0.1);
+  text-align: center;
+}
+
+/* ===== Conclusión ===== */
+.blog1-final {
+  background: #f8f9fa;
+  padding: 25px;
+  border-radius: 10px;
+  text-align: center;
+  margin-top: 45px;
+  border-top: 3px solid #0d6efd;
+}
+
+.blog1-final p {
+  color: #222;
+  font-weight: 500;
+  font-size: 1.05rem;
+}
+
+.blog1-final strong {
+  color: #0d6efd;
+}
+
+/* ===== Botón volver ===== */
+.volver-blog {
+  text-align: left;
+  margin-top: 40px;
+}
+
+.volver-blog .btn {
+  padding: 10px 20px;
+  border-radius: 8px;
+  background: linear-gradient(90deg, #0d6efd, #007bff);
+  color: #fff;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(13, 110, 253, 0.3);
+}
+
+.volver-blog .btn:hover {
+  background: linear-gradient(90deg, #0b5ed7, #0056b3);
+  transform: translateY(-2px);
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+  .blog1-hero img {
+    height: 300px;
+  }
+
+  .blog1-overlay h1 {
+    font-size: 1.6rem;
+  }
+
+  .blog1-overlay p {
+    font-size: 1rem;
+  }
+
+  .blog1-contenido {
+    padding: 25px 15px;
+  }
+}

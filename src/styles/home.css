@@ -1,0 +1,122 @@
+/* ==========================================================
+   🏡 HOME - Estilo moderno para productos destacados
+   ========================================================== */
+
+main {
+  font-family: "Segoe UI", sans-serif;
+  background: #f8f9fa;
+  padding-bottom: 60px;
+}
+
+/* ===== TÍTULO DE LA SECCIÓN ===== */
+.destacados h3 {
+  font-size: 2rem;
+  font-weight: 700;
+  text-align: center;
+  margin-top: 40px;
+  margin-bottom: 30px;
+  color: #0d6efd;
+  text-transform: uppercase;
+}
+
+.destacados h3::after {
+  content: "";
+  display: block;
+  margin: 10px auto;
+  width: 60px;
+  height: 3px;
+  background-color: #ffc107; /* dorado */
+  border-radius: 2px;
+}
+
+/* ===== GRID DE PRODUCTOS ===== */
+.destacados-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  padding: 0 40px;
+  justify-items: center;
+}
+
+/* ===== TARJETAS DE PRODUCTOS ===== */
+.producto {
+  background-color: #fff;
+  border: 1px solid #dee2e6;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  max-width: 300px;
+  position: relative;
+}
+
+.producto:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+.producto img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+.producto h4 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #212529;
+  margin-bottom: 10px;
+}
+
+.producto p {
+  font-size: 1rem;
+  color: #6c757d;
+  margin-bottom: 20px;
+}
+
+/* ===== BOTÓN DE DETALLE ===== */
+.btn-primario {
+  background-color: #0d6efd;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.btn-primario:hover {
+  background-color: #0b5ed7;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+  .destacados h3 {
+    font-size: 1.7rem;
+  }
+
+  .producto img {
+    height: 180px;
+  }
+
+  .btn-primario {
+    padding: 8px 16px;
+  }
+}
+
+@media (max-width: 576px) {
+  .destacados-grid {
+    padding: 0 20px;
+  }
+
+  .producto {
+    max-width: 100%;
+  }
+
+  .producto img {
+    height: 150px;
+  }
+}
