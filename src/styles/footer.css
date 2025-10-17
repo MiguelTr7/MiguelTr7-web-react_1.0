@@ -1,96 +1,133 @@
-/* Estilo general del footer */
-footer {
-  background-color: #212529; /* Fondo oscuro */
-  color: #ddd; /* Texto claro */
-  padding: 5px 0; /* Reducir el padding vertical */
-  font-size: 0.85rem; /* Reducir el tamaño de la fuente */
+/* ==========================================================
+   ⚙️ FOOTER - Versión minimalista y alineada
+   ========================================================== */
+
+.footer {
+  background: #0d1117;
+  color: #f8f9fa;
+  font-family: "Segoe UI", Roboto, sans-serif;
+  border-top: 3px solid #ffc107;
   text-align: center;
 }
 
-footer .inner {
-  max-width: 1100px;
+/* Contenedor principal */
+.footer-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 10px;
+  max-width: 1000px;
   margin: 0 auto;
-  padding: 16px;
-  display: grid;
-  gap: 15px; /* Reducir el espacio entre los elementos */
-  grid-template-columns: 1fr 1fr;
-  align-items: center;
+  padding: 10;
 }
 
-/* Ajustar el tamaño de la marca */
+/* ===== Marca ===== */
 .footer-brand {
-  font-size: 1.4rem;
-  font-weight: 600;
-  color: #f8f9fa;
+  flex: 1 1 350px;
+  min-width: 280px;
+  
+}
+
+.footer-brand h3 {
+  color: #ffc107;
+  font-size: 1.6rem;
+  margin-bottom: 12px;
+}
+
+.footer-brand p {
+  color: #c9d1d9;
+  line-height: 1.6;
+  font-size: 0.95rem;
+
+}
+
+/* ===== Suscripción ===== */
+.footer-newsletter {
+  flex: 1 1 350px;
+  min-width: 280px;
+  
+}
+
+.footer-newsletter h4 {
+  color: #ffffff;
+  font-size: 1.1rem;
   margin-bottom: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
 }
 
-/* Enlaces del footer */
-.footer-links {
-  list-style: none;
-  padding: 0;
-  display: flex;
-  justify-content: center;
-  gap: 15px;
-}
-
-.footer-links a {
-  color: #ddd;
-  text-decoration: none;
-  font-weight: 500;
-  padding: 6px 8px;
-  border-radius: 6px;
-  transition: background-color 0.3s;
-  font-size: 0.9rem; /* Reducir el tamaño de los enlaces */
-}
-
-.footer-links a:hover {
-  background-color: #0d6efd;
-  color: #fff;
-}
-
-/* Estilo del formulario de suscripción */
-.suscripcion {
-  display: flex;
-  justify-content: center;
-  gap: 8px;
-  max-width: 350px;
-  margin: 0 auto;
-}
-
-.suscripcion input {
-  padding: 10px;
+.footer-newsletter p {
+  color: #adb5bd;
   font-size: 0.95rem;
-  border-radius: 6px;
-  border: 1px solid #ccc;
-  width: 100%;
+  margin-bottom: 15px;
 }
 
-.suscripcion button {
-  padding: 10px 15px;
+.footer-newsletter form {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  flex-wrap: nowrap;
+}
+
+.footer-newsletter input {
+  flex: 1;
+  padding: 10px 12px;
+  border-radius: 6px;
+  border: none;
+  outline: none;
+  background: #161b22;
+  color: #f8f9fa;
   font-size: 0.95rem;
-  background-color: #0d6efd;
-  color: #fff;
+}
+
+.footer-newsletter input::placeholder {
+  color: #8b949e;
+}
+
+.footer-newsletter button {
+  background: #ffc107;
+  color: #222;
   border: none;
   border-radius: 6px;
+  padding: 10px 16px;
   cursor: pointer;
-  transition: background-color 0.3s;
+  font-weight: 600;
+  transition: all 0.3s ease;
 }
 
-.suscripcion button:hover {
-  background-color: #0b5ed7;
+.footer-newsletter button:hover {
+  background: #ffca2c;
+  transform: translateY(-2px);
 }
 
-/* Derechos reservados */
-.copy {
-  color: #999;
-  font-size: 0.8rem; /* Reducir el tamaño del texto de derechos reservados */
-  margin-top: 10px;
+/* ===== Línea inferior ===== */
+.footer-bottom {
+  border-top: 1px solid #21262d;
+  text-align: center;
+  padding: 5px 20px;
+  font-size: 0.9rem;
+  color: #8b949e;
+  background: #0b0f14;
 }
 
-/* Responsivo: En pantallas pequeñas, el footer se reorganiza */
+/* ===== Responsive ===== */
 @media (max-width: 768px) {
-  footer .inner {
-    grid-template-columns: 1fr; /* En móviles, todo se apila en una sola columna */
+  .footer-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 40px;
+  }
+
+  .footer-newsletter form {
+    flex-direction: column;
+    width: 100%;
+    gap: 12px;
+  }
+
+  .footer-newsletter input,
+  .footer-newsletter button {
+    width: 100%;
   }
 }

@@ -20,6 +20,8 @@ import Admin from "./pages/Admin";
 import Blogs from "./pages/Blogs";
 import Blog1 from "./pages/Blog1";
 import Blog2 from "./pages/Blog2";
+import Ofertas from "./pages/Ofertas"; 
+import Categorias from "./pages/Categorias"; // Importar la página de categorías
 
 function App() {
   // 🛒 Estado del carrito
@@ -83,6 +85,11 @@ function App() {
           path="/carrito"
           element={<Carrito carrito={carrito} setCarrito={setCarrito} />}
         />
+        <Route
+  path="/ofertas"
+  element={<Ofertas onAgregar={agregarAlCarrito} />}
+/>
+
 
         {/* Otras páginas */}
         <Route path="/contacto" element={<Contacto />} />
@@ -94,6 +101,10 @@ function App() {
         <Route path="/blogs" element={<Blogs />} />
         <Route path="/blog-1" element={<Blog1 />} />
         <Route path="/blog-2" element={<Blog2 />} />
+        <Route path="/ofertas" element={<Ofertas />} />
+        <Route path="/categorias" element={<Categorias />} /> // Nueva ruta
+
+        
       </Routes>
 
       {/* Footer global */}

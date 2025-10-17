@@ -1,30 +1,33 @@
 import React from "react";
 import "../styles/footer.css";
+
 function Footer() {
   return (
-    <footer>
-      <div className="inner">
-        <h3 className="footer-brand">Ferretería React 🔩</h3>
+    <footer className="footer">
+      <div className="footer-container">
+        {/* 🔹 Marca y descripción */}
+        <div className="footer-brand">
+          <h3>Ferretería React 🔩</h3>
+          <p>
+            Tu aliado en cada proyecto. Calidad, confianza y herramientas para
+            construir tus ideas.
+          </p>
+        </div>
 
-        {/* Enlaces de navegación del pie de página */}
-        <nav aria-label="Categorías">
-          <ul className="footer-links">
-            <li><a href="/productos">Herramientas</a></li>
-            <li><a href="/contacto">Contáctanos</a></li>
-          </ul>
-        </nav>
+        {/* 🔹 Formulario de suscripción */}
+        <div className="footer-newsletter">
+          <h4>Suscríbete</h4>
+          <p>Recibe ofertas exclusivas y novedades directamente en tu correo.</p>
+          <form>
+            <input type="email" placeholder="Tu correo electrónico" required />
+            <button type="submit">Enviar</button>
+          </form>
+        </div>
+      </div>
 
-        {/* Formulario de suscripción */}
-        <form className="suscripcion" action="#">
-          <label htmlFor="email" className="sr-only">Suscríbete</label>
-          <input id="email" type="email" placeholder="tu correo" required />
-          <button type="submit">Suscribirme</button>
-        </form>
-
-        {/* Derechos reservados */}
-        <p className="copy">
-          © 2025 Ferretería React | Desarrollado por Miguel
-        </p>
+      {/* 🔹 Línea inferior */}
+      <div className="footer-bottom">
+        <p>© 2025 Ferretería React | Desarrollado por Miguel</p>
       </div>
     </footer>
   );

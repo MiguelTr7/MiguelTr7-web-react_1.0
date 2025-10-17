@@ -7,29 +7,6 @@ import Llaves from "../assets/img/Llaves.jpg";
 function Home() {
   return (
     <main>
-      {/* SECCIÓN HERO PRINCIPAL */}
-      <section className="hero">
-        <div className="hero-texto">
-          <h2>Bienvenido a Ferretería React 🔧</h2>
-          <p>
-            Todo lo que necesitas para tus proyectos de construcción y hogar,
-            con calidad garantizada.
-          </p>
-          <div className="hero-botones">
-            <a href="/productos" className="btn btn-primario">
-              Ver productos
-            </a>
-            <a href="/contacto" className="btn btn-secundario">
-              Contáctanos
-            </a>
-          </div>
-        </div>
-
-        <div className="hero-imagen">
-          <img src="/img/ferreteria-hero.jpg" alt="Herramientas de ferretería" />
-        </div>
-      </section>
-
       {/* SECCIÓN DE DESTACADOS */}
       <section className="destacados">
         <h3>Productos destacados</h3>

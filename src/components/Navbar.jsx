@@ -35,12 +35,27 @@ function BarraNavegacion({ cantidad = 0, total = 0 }) {
             <Nav.Link as={NavLink} to="/productos">
               Productos
             </Nav.Link>
+             <Nav.Link as={NavLink} to="/ofertas">
+              Ofertas
+           </Nav.Link>
+           <Nav.Link as={NavLink} to="/categorias">
+              Categorías
+            </Nav.Link>
+
             <Nav.Link as={NavLink} to="/nosotros">
               Nosotros
             </Nav.Link>
+
+            {/* 🔗 NUEVA PESTAÑA BLOGS */}
+            <Nav.Link as={NavLink} to="/blogs">
+              Blogs
+            </Nav.Link>
+
             <Nav.Link as={NavLink} to="/contacto">
               Contacto
             </Nav.Link>
+           
+
 
             {/* Carrito */}
             <Nav.Link

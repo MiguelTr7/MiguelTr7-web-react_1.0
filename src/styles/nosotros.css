@@ -1,122 +1,218 @@
-/* nosotros inicio */
-.seccion-titulo {
-  text-align: center;
-  margin-top: 40px;
-  margin-bottom: 20px;
+/* ==========================================================
+   🔩 NOSOTROS - Estilo moderno y profesional
+   ========================================================== */
+
+.nosotros-main {
+  font-family: "Segoe UI", Roboto, sans-serif;
+  color: #222;
 }
 
-.seccion-titulo h2 {
-  font-size: 2rem;
-  font-weight: 700;
-  color: #212529;
-}
-
-.seccion-titulo .sub {
-  color: #6c757d;
-  font-size: 1.1rem;
-}
-
-.nosotros {
-  padding: 50px 60px;
-  background-color: #f8f9fa;
-  border-radius: 12px;
-  margin: 40px auto;
-  max-width: 1200px;
-  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
-}
-
-.nosotros-contenido {
+/* ===== Hero portada ===== */
+.nosotros-hero {
+  position: relative;
+  background: url("../assets/img/Ferreteria.jpg") center/cover no-repeat;
+  height: 400px;
   display: flex;
-  flex-wrap: wrap;
   align-items: center;
-  gap: 40px;
+  justify-content: center;
+  border-bottom: 4px solid #ffc107;
 }
 
-.nosotros article {
+.nosotros-hero .overlay {
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  text-align: center;
+  padding: 40px;
+  border-radius: 10px;
+  animation: fadeInHero 1.5s ease-in-out;
+}
+
+.nosotros-hero h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.nosotros-hero p {
+  max-width: 700px;
+  margin: 0 auto;
+  font-size: 1.1rem;
+  opacity: 0.9;
+}
+
+@keyframes fadeInHero {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ===== Historia y misión ===== */
+.nosotros-historia {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 40px;
+  max-width: 1200px;
+  margin: 60px auto;
+  padding: 0 20px;
+}
+
+.nosotros-texto {
   flex: 1 1 500px;
 }
 
-.nosotros article h3 {
+.nosotros-texto h2 {
   color: #0d6efd;
-  margin-top: 15px;
   margin-bottom: 10px;
 }
 
-.nosotros article p {
-  color: #444;
-  line-height: 1.6;
+.nosotros-texto p {
+  margin-bottom: 20px;
+  color: #333;
+  line-height: 1.7;
 }
 
-.lista-simple {
+.valores-lista {
   list-style: none;
-  padding: 0;
-  color: #212529;
+  padding-left: 0;
+  font-weight: 500;
 }
 
-.lista-simple li {
-  margin-bottom: 5px;
+.valores-lista li {
+  margin-bottom: 10px;
+  font-size: 1rem;
 }
 
-.nosotros-imagen img {
+.nosotros-img {
+  flex: 1 1 400px;
+}
+
+.nosotros-img img {
   width: 100%;
-  max-width: 420px;
   border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+  transition: transform 0.5s ease;
 }
 
-/* EQUIPO */
-.equipo {
+.nosotros-img img:hover {
+  transform: scale(1.03);
+}
+
+/* ===== Equipo ===== */
+.equipo-section {
+  background: #f8f9fa;
   text-align: center;
-  margin-top: 60px;
+  padding: 60px 20px;
 }
 
-.equipo h3 {
-  font-size: 1.6rem;
+.equipo-section h2 {
   color: #0d6efd;
+  font-size: 2rem;
   margin-bottom: 10px;
 }
 
-.equipo p {
+.equipo-sub {
   color: #555;
-  margin-bottom: 40px;
+  max-width: 700px;
+  margin: 0 auto 40px;
 }
 
 .equipo-grid {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 40px;
+  gap: 30px;
 }
 
 .miembro {
-  background-color: #fff;
-  padding: 20px;
-  border-radius: 10px;
-  width: 230px;
+  background: white;
+  border-radius: 12px;
   box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  width: 260px;
+  padding: 20px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .miembro:hover {
   transform: translateY(-5px);
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 6px 20px rgba(13, 110, 253, 0.15);
 }
 
 .miembro img {
   width: 100%;
   border-radius: 10px;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
 }
 
 .miembro h4 {
-  font-size: 1.1rem;
-  color: #212529;
   margin-bottom: 5px;
+  color: #0d6efd;
 }
 
 .miembro p {
-  color: #6c757d;
+  color: #555;
   font-size: 0.95rem;
 }
 
-/* nosotros final */
+/* ===== Sección final ===== */
+.nosotros-final {
+  background: linear-gradient(135deg, #0d6efd, #0056b3);
+  color: white;
+  text-align: center;
+  padding: 60px 30px;
+  margin-top: 50px;
+}
+
+.nosotros-final h2 {
+  font-size: 2rem;
+  margin-bottom: 15px;
+}
+
+.nosotros-final p {
+  max-width: 800px;
+  margin: 0 auto 25px;
+  line-height: 1.6;
+  opacity: 0.95;
+}
+
+.nosotros-final .btn {
+  background: #ffc107;
+  color: #222;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 24px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.nosotros-final .btn:hover {
+  background: #ffca2c;
+  transform: translateY(-2px);
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+  .nosotros-historia {
+    flex-direction: column;
+  }
+
+  .nosotros-img img {
+    max-width: 100%;
+  }
+
+  .equipo-grid {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .nosotros-final h2 {
+    font-size: 1.6rem;
+  }
+}
