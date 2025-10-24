@@ -1,21 +1,38 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
 function MiCuenta() {
+  const navigate = useNavigate();
+  const [usuario, setUsuario] = useState(null);
+
+  useEffect(() => {
+    const usuarioActivo = localStorage.getItem("usuarioActivo");
+    if (usuarioActivo) {
+      setUsuario(JSON.parse(usuarioActivo));
+    } else {
+      // Si no hay usuario logueado, redirigir a login
+      navigate("/iniciar-sesion");
+    }
+  }, [navigate]);
+
+  if (!usuario) {
+    return null; // Mientras redirige
+  }
+
   return (
     <main>
       <section className="seccion-titulo">
         <h2>Mi Cuenta</h2>
-        <p className="sub">Aquí puedes revisar y editar tu información personal.</p>
+        <p className="sub">Aquí puedes revisar tu información personal.</p>
       </section>
 
       <div className="profile-box">
         <h3>Datos de usuario</h3>
         <ul>
-          <li><strong>Nombre:</strong> Juan Pérez</li>
-          <li><strong>Correo:</strong> juan.perez@duoc.cl</li>
-          <li><strong>Dirección:</strong> Av. Los Álamos 2345</li>
+          <li><strong>Nombre:</strong> {usuario.nombre} {usuario.apellido}</li>
+          <li><strong>Correo:</strong> {usuario.email}</li>
+          <li><strong>Dirección:</strong> {usuario.direccion}</li>
         </ul>
-        <button className="btn btn-primario mt-2">Editar perfil</button>
       </div>
 
       <div className="profile-box">

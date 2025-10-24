@@ -1,163 +1,203 @@
 /* ==========================================================
-   🛒 OFERTAS - Ajustado al estilo de Productos (4 columnas)
+   🔥 OFERTAS - Diseño Premium estilo tienda retail
    ========================================================== */
 
-.ofertas {
-  background: #f8f9fa;
+.ofertas-main {
+  background-color: #f9fafb;
   min-height: 100vh;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   padding-bottom: 60px;
-  font-family: "Segoe UI", sans-serif;
 }
 
 /* ===== TÍTULO ===== */
-.seccion-titulo {
+.seccion-titulo-ofertas {
   text-align: center;
-  margin-top: 40px;
-  margin-bottom: 30px;
+  padding: 60px 20px 40px;
+  max-width: 800px;
+  margin: 0 auto;
 }
 
-.seccion-titulo h2 {
-  font-size: 2rem;
-  font-weight: 700;
-  color: #0d6efd;
+.seccion-titulo-ofertas h2 {
+  font-size: 2.4rem;
+  font-weight: 800;
+  color: #dc3545;
+  margin-bottom: 16px;
+  letter-spacing: -0.5px;
 }
 
 .sub {
-  color: #6c757d;
-  font-size: 1rem;
+  color: #64748b;
+  font-size: 1.1rem;
+  line-height: 1.6;
 }
 
-/* ===== GRID ===== */
+/* ===== GRID DE OFERTAS ===== */
 .ofertas-grid {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
   display: grid;
-  grid-template-columns: repeat(3, 1fr); /* 👈 4 columnas fijas en escritorio */
-  gap: 2px;
-  padding: 20px 750px;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 36px;
   justify-items: center;
 }
 
-/* ===== TARJETAS ===== */
-.oferta-card {
-  background-color: #fff;
-  border: 1px solid #dee2e6;
-  border-radius: 10px;
+/* ===== TARJETA DE OFERTA ===== */
+.tarjeta-oferta {
+  background: white;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   width: 100%;
-  max-width: 250px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-  text-align: center;
-  padding: 15px;
-  margin: 10px;
+  max-width: 280px;
   position: relative;
+  display: flex;
+  flex-direction: column;
 }
 
-.oferta-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+.tarjeta-oferta:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
 }
 
-/* Imagen */
-.oferta-card img {
-  width: 100%;
-  height: 180px;
-  object-fit: cover;
-  border-radius: 8px;
-  margin-bottom: 10px;
+/* ===== ETIQUETA DE DESCUENTO ===== */
+.etiqueta-descuento {
+  position: absolute;
+  top: 16px;
+  right: -30px;
+  background: #dc3545;
+  color: white;
+  font-weight: 700;
+  font-size: 0.85rem;
+  padding: 6px 40px;
+  transform: rotate(45deg);
+  z-index: 2;
+  box-shadow: 0 3px 8px rgba(220, 53, 69, 0.3);
 }
 
-/* ===== NOMBRE Y PRECIOS ===== */
-.oferta-card h3 {
-  font-size: 1.05rem;
-  color: #212529;
-  margin-bottom: 8px;
+/* ===== IMAGEN ===== */
+.imagen-oferta {
+  height: 200px;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
 }
 
+.imagen-oferta img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain; /* ✅ Evita que se corte la imagen */
+  transition: transform 0.4s ease;
+}
+
+.tarjeta-oferta:hover .imagen-oferta img {
+  transform: scale(1.05);
+}
+
+/* ===== CONTENIDO ===== */
+.contenido-oferta {
+  padding: 20px;
+  text-align: center;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.contenido-oferta h3 {
+  font-size: 1.25rem;
+  color: #1e293b;
+  font-weight: 700;
+  margin-bottom: -20px;
+  min-height: 56px;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* ===== PRECIOS ===== */
 .precios {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 8px;
-  margin-bottom: 12px;
+  gap: 10px;
+  margin-bottom: 20px;
 }
 
 .precio-oferta {
-  font-weight: bold;
+  font-size: 1.5rem;
+  font-weight: 800;
   color: #dc3545;
-  font-size: 1rem;
 }
 
 .precio-original {
-  color: #6c757d;
-  font-size: 0.9rem;
+  font-size: 1rem;
+  color: #94a3b8;
   text-decoration: line-through;
 }
 
-/* ===== BOTÓN (idéntico al de productos) ===== */
-.btn {
-  border-radius: 5px;
-  padding: 8px 14px;
-  font-weight: 500;
-  cursor: pointer;
-  text-decoration: none;
-}
-
-.btn-primario {
-  background-color: #0d6efd;
+/* ===== BOTÓN ===== */
+.btn-agregar {
+  background: linear-gradient(135deg, #dc3545 0%, #c82333 100%);
   color: white;
   border: none;
-}
-
-.btn-primario:hover {
-  background-color: #0b5ed7;
-}
-
-/* ===== ETIQUETA DE DESCUENTO ===== */
-.oferta-card::before {
-  content: "20% OFF";
-  position: absolute;
-  top: 12px;
-  right: -40px;
-  background: #dc3545;
-  color: #fff;
+  border-radius: 10px;
+  padding: 12px;
+  font-size: 1rem;
   font-weight: 600;
-  font-size: 0.8rem;
-  padding: 4px 40px;
-  transform: rotate(45deg);
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 10px rgba(220, 53, 69, 0.25);
+  flex-grow: 0;
+}
+
+.btn-agregar:hover {
+  background: linear-gradient(135deg, #c82333 0%, #b21f2d 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 14px rgba(220, 53, 69, 0.35);
 }
 
 /* ===== RESPONSIVE ===== */
-
-/* 3 columnas en tablets */
-@media (max-width: 992px) {
-  .ofertas-grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
-
-/* 2 columnas en móviles grandes */
 @media (max-width: 768px) {
-  .ofertas-grid {
-    grid-template-columns: repeat(2, 1fr);
-    padding: 10px 20px;
+  .seccion-titulo h2 {
+    font-size: 2rem;
   }
 
-  .oferta-card img {
-    height: 170px;
+  .ofertas-grid {
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 28px;
+    padding: 0 16px;
+  }
+
+  .imagen-oferta {
+    height: 180px;
   }
 }
 
-/* 1 columna en móviles pequeños */
-@media (max-width: 576px) {
+@media (max-width: 480px) {
+  .seccion-titulo {
+    padding: 40px 16px 30px;
+  }
+
+  .seccion-titulo h2 {
+    font-size: 1.8rem;
+  }
+
   .ofertas-grid {
     grid-template-columns: 1fr;
   }
 
-  .oferta-card img {
+  .imagen-oferta {
     height: 160px;
   }
 
-  .oferta-card::before {
-    font-size: 0.7rem;
+  .etiqueta-descuento {
+    top: 12px;
+    right: -25px;
+    padding: 5px 35px;
+    font-size: 0.8rem;
   }
 }

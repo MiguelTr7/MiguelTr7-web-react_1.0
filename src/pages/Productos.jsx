@@ -4,15 +4,14 @@ import productos from "../data/productos";
 import "../styles/productos.css";
 
 function Productos({ onAgregar }) {
-  // Función local que usa la prop onAgregar
   const handleAddToCart = (producto) => {
     onAgregar({ ...producto, cantidad: 1 });
   };
 
   return (
-    <main>
+    <main className="productos-main">
       {/* Título principal */}
-      <section className="seccion-titulo">
+      <section className="seccion-titulo-productos">
         <h2>Productos en venta</h2>
         <p className="sub">
           Selecciona una herramienta para ver su detalle o añadir al carrito.
@@ -20,25 +19,27 @@ function Productos({ onAgregar }) {
       </section>
 
       {/* Listado de productos */}
-      <section className="productos" aria-label="Listado de productos">
+      <section className="productos-grid" aria-label="Listado de productos">
         {productos.map((item) => (
-          <article className="card" key={item.id}>
-            <img src={item.imagen} alt={item.nombre} />
-            <h3>{item.nombre}</h3>
-            <p className="precio">${item.precio.toLocaleString("es-CL")}</p>
-            <div className="card-acciones">
-              {/* 🔗 Link al detalle */}
-              <Link className="btn btn-primario" to={`/detalle/${item.id}`}>
-                Detalle
-              </Link>
-
-              {/* 🛒 Botón de añadir */}
-              <button
-                className="btn btn-negro btn-add"
-                onClick={() => handleAddToCart(item)}
-              >
-                Añadir
-              </button>
+          <article className="tarjeta-producto" key={item.id}>
+            <div className="imagen-contenedor">
+              <img src={item.imagen} alt={item.nombre} loading="lazy" />
+            </div>
+            <div className="contenido-producto">
+              <h3>{item.nombre}</h3>
+              <p className="precio">${item.precio.toLocaleString("es-CL")}</p>
+              <div className="acciones-producto">
+                <Link className="btn btn-detalle" to={`/detalle/${item.id}`}>
+                  Ver detalle
+                </Link>
+                <button
+                  className="btn btn-agregar_producto"
+                  onClick={() => handleAddToCart(item)}
+                  aria-label={`Añadir ${item.nombre} al carrito`}
+                >
+                  🛒 Añadir al carrito
+                </button>
+              </div>
             </div>
           </article>
         ))}
@@ -48,5 +49,3 @@ function Productos({ onAgregar }) {
 }
 
 export default Productos;
-
-
