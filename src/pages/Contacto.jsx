@@ -1,49 +1,70 @@
 import React from "react";
-import "../styles/contacto.css"; // Asegúrate de tener un archivo CSS adecuado
+import "../styles/contacto.css";
 
 function Contacto() {
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    alert("¡Gracias por tu mensaje! Nos pondremos en contacto pronto.");
+    e.target.reset();
+  };
+
   return (
-    <main>
-      <section className="seccion-titulo">
-        <h2>Contacto</h2>
-        <p className="sub">Envíanos tus consultas o sugerencias</p>
+    <main className="contacto-main">
+      {/* Hero Section */}
+      <section className="hero-contacto">
+        <div className="hero-content">
+          <h1>Contáctanos</h1>
+          <p className="sub">¿Tienes dudas, sugerencias o necesitas asesoría? Estamos aquí para ayudarte.</p>
+        </div>
       </section>
 
-      <form className="form">
-        <div className="campo">
-          <label htmlFor="nombre">Nombre</label>
-          <input
-            id="nombre"
-            type="text"
-            placeholder="Tu nombre"
-            required
-          />
-        </div>
+      {/* Formulario */}
+      <section className="seccion-formulario">
+        <div className="contenedor">
+          <div className="formulario-contenedor">
+            <form className="formulario-contacto" onSubmit={handleSubmit}>
+              <div className="grupo-campos">
+                <div className="campo">
+                  <label htmlFor="nombre">Nombre completo</label>
+                  <input
+                    id="nombre"
+                    type="text"
+                    placeholder="Ej. Juan Pérez"
+                    required
+                  />
+                </div>
 
-        <div className="campo">
-          <label htmlFor="correo">Correo</label>
-          <input
-            id="correo"
-            type="email"
-            placeholder="tu@correo.cl"
-            required
-          />
-        </div>
+                <div className="campo">
+                  <label htmlFor="correo">Correo electrónico</label>
+                  <input
+                    id="correo"
+                    type="email"
+                    placeholder="tu@correo.cl"
+                    required
+                  />
+                </div>
+              </div>
 
-        <div className="campo">
-          <label htmlFor="mensaje">Mensaje</label>
-          <textarea
-            id="mensaje"
-            rows="5"
-            placeholder="Escribe tu mensaje..."
-            required
-          ></textarea>
-        </div>
+              <div className="campo campo-textarea">
+                <label htmlFor="mensaje">Mensaje</label>
+                <textarea
+                  id="mensaje"
+                  rows="6"
+                  placeholder="Cuéntanos cómo podemos ayudarte..."
+                  required
+                ></textarea>
+              </div>
 
-        <button type="submit" className="btn btn-primario">
-          Enviar
-        </button>
-      </form>
+              <button type="submit" className="btn-enviar">
+                ✉️ Enviar mensaje
+              </button>
+            </form>
+          </div>
+        </div>
+      </section>
+
+      {/* BANDA DE CONTACTO - Justo arriba del footer */}
+    
     </main>
   );
 }

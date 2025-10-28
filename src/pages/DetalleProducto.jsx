@@ -1,7 +1,7 @@
 import React from "react";
 import { useParams } from "react-router-dom";
 import productos from "../data/productos";
-import "../styles/styles.css";
+import "../styles/detalleproducto.css";
 
 function DetalleProducto({ onAgregar }) {
   const { id } = useParams(); // obtiene el ID desde la URL
@@ -38,7 +38,7 @@ function DetalleProducto({ onAgregar }) {
 
         <div className="detalle-info">
           <h3>{producto.nombre}</h3>
-          <p className="precio">${producto.precio.toLocaleString("es-CL")}</p>
+          <p className="precio-detalle">${producto.precio.toLocaleString("es-CL")}</p>
 
           <p className="descripcion">
             Este producto está fabricado con materiales de alta calidad, ideal
@@ -54,7 +54,7 @@ function DetalleProducto({ onAgregar }) {
             >
               Añadir al carrito
             </button>
-            <a href="/productos" className="btn btn-secundario">
+            <a href="/productos" className="btn btn-secundario_detalle">
               Volver a productos
             </a>
           </div>
