@@ -31,7 +31,6 @@ function RegistrarUsuario() {
     e.preventDefault();
     setError("");
 
-    // Validaciones
     if (!validarEmail(formData.email)) {
       setError("Por favor ingresa un correo electrónico válido");
       return;
@@ -42,10 +41,7 @@ function RegistrarUsuario() {
       return;
     }
 
-    // Guardar en localStorage
     const usuarios = JSON.parse(localStorage.getItem("usuarios")) || [];
-    
-    // Verificar si el email ya existe
     const emailExiste = usuarios.some(user => user.email === formData.email);
     if (emailExiste) {
       setError("Este correo ya está registrado");
@@ -54,26 +50,34 @@ function RegistrarUsuario() {
 
     usuarios.push(formData);
     localStorage.setItem("usuarios", JSON.stringify(usuarios));
-
-    // Redireccionar a iniciar sesión
     navigate("/iniciar-sesion");
   };
 
   return (
-    <main>
-      <section className="auth">
+    <main className="registro-main">
+      <div className="registro-wrapper">
         <div className="registro-card">
-          <h2>🧰 Registro de Usuario</h2>
+          <div className="logo">
+            <span className="icon">🧰</span>
+            <h1>Ferretería React</h1>
+          </div>
+          
+          <h2>Crear cuenta</h2>
           <p className="sub">
             Crea tu cuenta para acceder a tus compras y promociones exclusivas.
           </p>
 
-          <form className="form" onSubmit={handleSubmit}>
-            {error && <p className="error-message" style={{color: "red", marginBottom: "1rem"}}>{error}</p>}
+          {error && (
+            <div className="alerta-error">
+              <span>⚠️</span> {error}
+            </div>
+          )}
 
-            <div className="campo">
-              <label>Nombre</label>
+          <form onSubmit={handleSubmit}>
+            <div className="input-group">
+              <label htmlFor="nombre">Nombre</label>
               <input 
+                id="nombre"
                 type="text" 
                 name="nombre"
                 placeholder="Tu nombre" 
@@ -83,9 +87,10 @@ function RegistrarUsuario() {
               />
             </div>
 
-            <div className="campo">
-              <label>Apellido</label>
+            <div className="input-group">
+              <label htmlFor="apellido">Apellido</label>
               <input 
+                id="apellido"
                 type="text" 
                 name="apellido"
                 placeholder="Tu apellido" 
@@ -95,9 +100,10 @@ function RegistrarUsuario() {
               />
             </div>
 
-            <div className="campo">
-              <label>Correo electrónico</label>
+            <div className="input-group">
+              <label htmlFor="email">Correo electrónico</label>
               <input 
+                id="email"
                 type="email" 
                 name="email"
                 placeholder="correo@ejemplo.com" 
@@ -107,21 +113,23 @@ function RegistrarUsuario() {
               />
             </div>
 
-            <div className="campo">
-              <label>Contraseña</label>
+            <div className="input-group">
+              <label htmlFor="password">Contraseña</label>
               <input
+                id="password"
                 type="password"
                 name="password"
-                placeholder="********"
+                placeholder="••••••"
                 value={formData.password}
                 onChange={handleChange}
                 required
               />
             </div>
 
-            <div className="campo">
-              <label>Dirección</label>
+            <div className="input-group">
+              <label htmlFor="direccion">Dirección</label>
               <input
+                id="direccion"
                 type="text"
                 name="direccion"
                 placeholder="Calle, número, comuna..."
@@ -131,19 +139,17 @@ function RegistrarUsuario() {
               />
             </div>
 
-            <button className="btn btn-primario" type="submit">
+            <button type="submit" className="btn-registrar">
               Crear cuenta
             </button>
           </form>
 
-          <p className="sub mt-3">
+          <div className="login-link">
             ¿Ya tienes cuenta?{" "}
-            <a href="/iniciar-sesion" className="link-login">
-              Inicia sesión aquí
-            </a>
-          </p>
+            <a href="/iniciar-sesion">Inicia sesión aquí</a>
+          </div>
         </div>
-      </section>
+      </div>
     </main>
   );
 }

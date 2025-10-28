@@ -1,72 +1,80 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import "../styles/categorias.css";
-import productos from "../data/productos"; // Traemos los productos
-import categorias from "../data/categorias"; // Traemos las categorías
+import productos from "../data/productos";
+import categorias from "../data/categorias";
 
 function Categorias() {
   const [productosFiltrados, setProductosFiltrados] = useState([]);
-  const [categoriaSeleccionada, setCategoriaSeleccionada] = useState(null);
+  const [categoriaActiva, setCategoriaActiva] = useState(null);
 
-  // Filtramos los productos según la categoría seleccionada
-  const filtrarProductos = (categoriaId) => {
-    setCategoriaSeleccionada(categoriaId);
-    if (categoriaId) {
-      const productosPorCategoria = productos.filter(
-        (producto) => producto.categoriaId === categoriaId
-      );
-      setProductosFiltrados(productosPorCategoria);
-    }
-  };
-
-  // Mostrar todos los productos
-  const verTodosLosProductos = () => {
-    setCategoriaSeleccionada(null);
+  // Al cargar, mostrar todos los productos
+  useEffect(() => {
     setProductosFiltrados(productos);
+  }, []);
+
+  const filtrarPorCategoria = (id) => {
+    setCategoriaActiva(id);
+    if (id === "todos") {
+      setProductosFiltrados(productos);
+    } else {
+      const filtrados = productos.filter((p) => p.categoriaId === id);
+      setProductosFiltrados(filtrados);
+    }
   };
 
   return (
     <main className="categorias">
-      {/* Título */}
-      <section className="seccion-titulo">
-        <h2>Explora nuestras categorías</h2>
-        <p className="sub">
-          Encuentra herramientas y productos según tu proyecto.
-        </p>
+      {/* Hero / Título */}
+      <section className="hero-categorias">
+        <div className="hero-content">
+          <h1>Explora nuestras categorías</h1>
+          <p className="sub">Encuentra herramientas y productos según tu proyecto.</p>
+        </div>
       </section>
 
-      {/* Botones de categorías */}
-      <section className="categorias-grid">
-        <button
-          className="btn btn-secundario"
-          onClick={verTodosLosProductos}
-        >
-          Ver todos los productos
-        </button>
-        {categorias.map((categoria) => (
+      {/* Navegación de categorías estilo "pills" */}
+      <section className="navegacion-categorias">
+        <div className="contenedor-categorias">
           <button
-            key={categoria.id}
-            className="btn btn-primario"
-            onClick={() => filtrarProductos(categoria.id)}
+            className={`pill ${categoriaActiva === "todos" ? "activa" : ""}`}
+            onClick={() => filtrarPorCategoria("todos")}
           >
-            {categoria.nombre}
+            Todos los productos
           </button>
-        ))}
+          {categorias.map((cat) => (
+            <button
+              key={cat.id}
+              className={`pill ${categoriaActiva === cat.id ? "activa" : ""}`}
+              onClick={() => filtrarPorCategoria(cat.id)}
+            >
+              {cat.nombre}
+            </button>
+          ))}
+        </div>
       </section>
 
-      {/* Productos filtrados */}
+      {/* Productos */}
       <section className="productos-grid">
         {productosFiltrados.length === 0 ? (
-          <p className="no-productos">Selecciona una categoría para ver los productos.</p>
+          <div className="vacio">
+            <p>No hay productos en esta categoría.</p>
+          </div>
         ) : (
           productosFiltrados.map((producto) => (
-            <article key={producto.id} className="producto">
-              <img src={producto.imagen} alt={producto.nombre} />
-              <h4>{producto.nombre}</h4>
-              <p>${producto.precio}</p>
-              <Link to={`/detalle/${producto.id}`} className="btn btn-secundario">
-                Ver detalle
-              </Link>
+            <article key={producto.id} className="tarjeta-producto">
+              <div className="imagen-contenedor">
+                <img src={producto.imagen} alt={producto.nombre} />
+                <div className="overlay">
+                  <Link to={`/detalle/${producto.id}`} className="btn-ver">
+                    Ver detalle
+                  </Link>
+                </div>
+              </div>
+              <div className="info-producto">
+                <h3>{producto.nombre}</h3>
+                <p className="precio">${producto.precio.toLocaleString("es-CL")}</p>
+              </div>
             </article>
           ))
         )}
