@@ -39,9 +39,9 @@ function Footer() {
         <div className="footer-columna">
           <h4>Contacto</h4>
           <ul className="contacto-info">
-            <li>📍 Av. Siempre Viva 123, Santiago</li>
-            <li>📞 +56 9 1234 5678</li>
-            <li>✉️ hola@ferreteriareact.cl</li>
+            <li>📍 Av.Diego Portales, Puerto Montt</li>
+            <li>📞 +56 9 3443433</li>
+            <li>✉️ mika@ferreteria.cl</li>
           </ul>
         </div>
 
@@ -62,7 +62,7 @@ function Footer() {
 
       {/* Línea inferior */}
       <div className="footer-derechos">
-        <p>© 2025 Ferretería React | Desarrollado por Miguel</p>
+        <p>© 2025 Ferretería React | Desarrollado por Miguel y Daniel</p>
         <div className="politicas">
           <a href="#">Términos</a>
           <a href="#">Privacidad</a>
@@ -71,5 +71,6 @@ function Footer() {
     </footer>
   );
 }
+
 
 export default Footer;
